@@ -37,8 +37,9 @@ while True:
         file_name_path = 'face/' + str(count) + '.jpg'
         cv2.imwrite(file_name_path, face)
         # Put count on images and display live count
-        cv2.putText(face, str(count), (50, 50), cv2.FONT_HERSHEY_COMPLEX, 1, (0,255,0), 2)
-        cv2.imshow('Face Cropper', face)
+        # cv2.putText(face, str(count), (50, 50), cv2.FONT_HERSHEY_COMPLEX, 1, (0,255,0), 2)
+        # cv2.imshow('Face Cropper', face)\
+        print("Face Found *******************")
     else:
         print("Face not found")
         pass
