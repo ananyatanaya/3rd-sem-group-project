@@ -8,8 +8,8 @@ from imutils.video import VideoStream
 from imutils.video import FPS
 import time
 import pickle
-import tensorflow as tf
-from tensorflow.keras.models import load_model
+#import tensorflow as tf
+#from tensorflow.keras.models import load_model
 import pandas as pd
 from os import listdir
 from os.path import isfile, join
@@ -20,7 +20,7 @@ from PIL import Image
 print("Python version: ", python_version())
 print("OpenCV version: ", cv2.__version__)
 print("Numpy version: ", np.version.version)
-print("Tensorflow version: ", tf.__version__)
+#print("Tensorflow version: ", tf.__version__)
 print("Pickle version: ", pickle.format_version)
 print(sys.version)
 
