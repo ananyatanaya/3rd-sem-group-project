@@ -8,6 +8,7 @@ from imutils.video import VideoStream
 from imutils.video import FPS
 import time
 import pickle
+import time
 #import tensorflow as tf
 #from tensorflow.keras.models import load_model
 import pandas as pd
@@ -137,10 +138,12 @@ for key in models:
 
 while True:  
     ret, frame = cap.read()
+    frame = cv2.rotate(frame, cv2.ROTATE_180)
+    cv2.imwrite("face.jpg", frame)
     ar = face_detector(frame)
     face=ar[1] 
     pos=ar[2]
-    time.sleep(0.06)
+    time.sleep(1)
     if not ret:
         break   
 
@@ -304,7 +307,8 @@ while True:
     # Show the output frame
 
     # key = cv2.waitKey(1) & 0xFF
-    break
+    time.sleep(1)
+    # break
     # if key == ord("q"):
     #     break
     #update the FPS counter
@@ -321,6 +325,6 @@ for img in glob.glob("*.jpg"):
 demo = Image.fromarray(cv_img)
 # pytesseract.pytesseract.tesseract_cmd = 'C:/Program Files (x86)/Tesseract-OCR/tesseract.exe'
 text_reader = pytesseract.image_to_string(demo, lang = 'eng')
-print(text_reader)    
+print("text_reader = {}".format(text_reader))
 # Clean
 cap.release()
