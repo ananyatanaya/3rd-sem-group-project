@@ -177,6 +177,7 @@ while True:
     F = 50    
     box = detections[0, 0, i, 3:7] * np.array([w, h, w, h])
     (startX, startY, endX, endY) = box.astype("int")  
+    print("startX: {startX} startY: {startY} endX: {endX} endY: {endY}".format(startX=startX, startY=startY,endX=endX,endY=endY))
     coordinates[i] = (startX, startY, endX, endY)
     # Mid point of bounding box
     x_mid = round((startX+endX)/2,4)
@@ -184,6 +185,7 @@ while True:
     height = round(endY-startY,4)
 
     # Distance from camera based on triangle similarity
+    print("Height:{height}".format(height = height))
     distance = 0 if height == 0 else round(((165 * F)/height)/30.48,2)
     print("Distance:{dist}".format(dist = distance), "feet")
     
